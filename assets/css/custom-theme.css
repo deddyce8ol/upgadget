@@ -1,0 +1,1270 @@
+/**
+ * Custom Theme CSS - Putra Elektronik
+ * Berdasarkan warna dari logo baru (hexagon icon)
+ *
+ * Warna Utama:
+ * - Biru Primary: #0052CC (dari logo baru - modern & professional)
+ * - Merah Secondary: #E63946 (accent color untuk promo & highlights)
+ */
+
+/* ========================================
+   PRIMARY COLOR (BIRU)
+   ======================================== */
+
+/* Button Primary */
+.btn-primary {
+  border-color: #0052CC !important;
+  background-color: #0052CC !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus {
+  border-color: #3385FF !important;
+  background-color: #3385FF !important;
+  color: #fff !important;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+  border-color: #0052CC !important;
+  background-color: #0052CC !important;
+  color: #fff !important;
+  opacity: 0.65;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  border-color: #003D99 !important;
+  background-color: #003D99 !important;
+  color: #fff !important;
+}
+
+/* Background Primary */
+.bg-primary {
+  background-color: #0052CC !important;
+}
+
+/* Text Primary */
+.text-primary {
+  color: #0052CC !important;
+}
+
+/* Border Primary */
+.border-primary {
+  border-color: #0052CC !important;
+}
+
+/* Links */
+a.text-primary:hover,
+a.text-primary:focus {
+  color: #3385FF !important;
+}
+
+/* ========================================
+   SECONDARY COLOR (MERAH)
+   ======================================== */
+
+/* Button Secondary */
+.btn-secondary {
+  border-color: #E63946 !important;
+  background-color: #E63946 !important;
+  color: #fff !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary.focus {
+  border-color: #FF4A57 !important;
+  background-color: #FF4A57 !important;
+  color: #fff !important;
+}
+
+.btn-secondary.disabled,
+.btn-secondary:disabled {
+  border-color: #E63946 !important;
+  background-color: #E63946 !important;
+  color: #fff !important;
+  opacity: 0.65;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+  border-color: #C5303C !important;
+  background-color: #C5303C !important;
+  color: #fff !important;
+}
+
+/* Background Secondary */
+.bg-secondary {
+  background-color: #E63946 !important;
+}
+
+/* Text Secondary */
+.text-secondary {
+  color: #E63946 !important;
+}
+
+/* ========================================
+   HEADER & NAVIGATION
+   ======================================== */
+
+/* Top Notice Bar */
+.top-notice.bg-primary {
+  background-color: #0052CC !important;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggler.text-primary {
+  color: #0052CC !important;
+}
+
+/* Header Links Hover */
+.header a:hover,
+.main-nav a:hover {
+  color: #0052CC !important;
+}
+
+/* ========================================
+   PRODUCT ELEMENTS
+   ======================================== */
+
+/* Product Labels */
+.product-label.label-hot {
+  background-color: #E63946 !important;
+}
+
+/* Product Prices */
+.product-price .new-price {
+  color: #E63946 !important;
+}
+
+/* Add to Cart Button */
+.btn-product.btn-cart {
+  background-color: #0052CC !important;
+  border-color: #0052CC !important;
+}
+
+.btn-product.btn-cart:hover {
+  background-color: #3385FF !important;
+  border-color: #3385FF !important;
+}
+
+/* Wishlist Button */
+.btn-product-icon.btn-wishlist:hover {
+  background-color: #E63946 !important;
+  border-color: #E63946 !important;
+}
+
+/* ========================================
+   BUTTONS & INTERACTIVE ELEMENTS
+   ======================================== */
+
+/* Outline Primary Button */
+.btn-outline-primary {
+  color: #0052CC !important;
+  border-color: #0052CC !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  color: #fff !important;
+  background-color: #0052CC !important;
+  border-color: #0052CC !important;
+}
+
+/* Outline Secondary Button */
+.btn-outline-secondary {
+  color: #E63946 !important;
+  border-color: #E63946 !important;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  color: #fff !important;
+  background-color: #E63946 !important;
+  border-color: #E63946 !important;
+}
+
+/* ========================================
+   BADGES & LABELS
+   ======================================== */
+
+/* Badge Primary */
+.badge-primary {
+  background-color: #0052CC !important;
+}
+
+/* Badge Secondary */
+.badge-secondary {
+  background-color: #E63946 !important;
+}
+
+/* Badge Circle (Cart Count, Wishlist Count) */
+.badge-circle {
+  background-color: #E63946 !important;
+}
+
+/* ========================================
+   FORMS & INPUTS
+   ======================================== */
+
+/* Input Focus */
+.form-control:focus {
+  border-color: #0052CC !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 51, 204, 0.25) !important;
+}
+
+/* Checkbox & Radio Checked */
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #0052CC !important;
+  border-color: #0052CC !important;
+}
+
+/* ========================================
+   ALERTS & NOTIFICATIONS
+   ======================================== */
+
+/* Alert Success */
+.alert-success {
+  background-color: rgba(0, 51, 204, 0.1) !important;
+  border-color: #0052CC !important;
+  color: #003D99 !important;
+}
+
+/* Alert Danger */
+.alert-danger {
+  background-color: rgba(230, 57, 70, 0.1) !important;
+  border-color: #E63946 !important;
+  color: #C5303C !important;
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+
+.page-link {
+  color: #0052CC !important;
+}
+
+.page-link:hover {
+  color: #3385FF !important;
+  background-color: rgba(0, 51, 204, 0.1) !important;
+  border-color: #0052CC !important;
+}
+
+.page-item.active .page-link {
+  background-color: #0052CC !important;
+  border-color: #0052CC !important;
+}
+
+/* ========================================
+   CAROUSEL & SLIDER
+   ======================================== */
+
+/* Owl Carousel Dots */
+.owl-carousel .owl-dot.active span {
+  background-color: #0052CC !important;
+}
+
+/* Owl Carousel Nav */
+.owl-carousel .owl-nav button:hover {
+  background-color: #0052CC !important;
+  color: #fff !important;
+}
+
+/* ========================================
+   LOGO STYLING
+   ======================================== */
+
+/* Header Logo */
+.header .logo img {
+  max-height: 50px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+/* Responsive Logo */
+@media (max-width: 991px) {
+  .header .logo img {
+    max-height: 40px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .header .logo img {
+    max-height: 35px !important;
+  }
+}
+
+/* Sticky Header Logo */
+.sticky-header.fixed .logo img {
+  max-height: 45px !important;
+}
+
+/* Logo Text Styling */
+.header .logo-text {
+  line-height: 1.1;
+  margin-left: 0.5rem;
+}
+
+.header .logo-text div {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0052CC;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+}
+
+/* Responsive Logo Text */
+@media (max-width: 991px) {
+  .header .logo-text div {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header .logo-text {
+    margin-left: 0.3rem;
+  }
+
+  .header .logo-text div {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+}
+
+@media (max-width: 575px) {
+  .header .logo-text {
+    margin-left: 0.25rem;
+  }
+
+  .header .logo-text div {
+    font-size: 10px;
+    letter-spacing: 0.2px;
+  }
+}
+
+/* Sticky Header Logo Text */
+.sticky-header.fixed .logo-text div {
+  font-size: 15px;
+}
+
+/* ========================================
+   BANNER SLIDER FULL WIDTH
+   ======================================== */
+
+/* Full Width Slider Container */
+.intro-slider-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Slider Image Full Width */
+.intro-slider .slide-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 600px;
+}
+
+/* Intro Content Positioning */
+.intro-slider .intro-content {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* Intro Subtitle */
+.intro-slider .intro-subtitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0052CC;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Responsive Banner Slider */
+@media (max-width: 991px) {
+  .intro-slider .slide-image img {
+    max-height: 450px;
+  }
+
+  .intro-slider .intro-subtitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .intro-slider .slide-image img {
+    max-height: 350px;
+  }
+
+  .intro-slider .intro-content {
+    left: 3%;
+    right: 3%;
+  }
+
+  .intro-slider .intro-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .intro-slider .slide-image img {
+    max-height: 280px;
+  }
+
+  .intro-slider .intro-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* ========================================
+   OWL CAROUSEL NAVIGATION (ARROWS + DOTS)
+   ======================================== */
+
+/* Navigation Arrows */
+.intro-slider.owl-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+.intro-slider.owl-carousel .owl-nav button.owl-prev,
+.intro-slider.owl-carousel .owl-nav button.owl-next {
+  background-color: rgba(0, 51, 204, 0.85) !important;
+  color: #fff !important;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 55px;
+  text-align: center;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  box-shadow: 0 4px 12px rgba(0, 51, 204, 0.3);
+  border: 2px solid transparent;
+}
+
+.intro-slider.owl-carousel .owl-nav button.owl-prev:hover,
+.intro-slider.owl-carousel .owl-nav button.owl-next:hover {
+  background-color: #0052CC !important;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 51, 204, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.intro-slider.owl-carousel .owl-nav button.owl-prev:active,
+.intro-slider.owl-carousel .owl-nav button.owl-next:active {
+  transform: scale(0.95);
+}
+
+/* Arrow Icons */
+.intro-slider.owl-carousel .owl-nav button.owl-prev::before {
+  content: "‹";
+  font-size: 36px;
+  font-weight: 300;
+}
+
+.intro-slider.owl-carousel .owl-nav button.owl-next::before {
+  content: "›";
+  font-size: 36px;
+  font-weight: 300;
+}
+
+/* Dots Pagination */
+.intro-slider.owl-carousel .owl-dots {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.intro-slider.owl-carousel .owl-dots .owl-dot {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+.intro-slider.owl-carousel .owl-dots .owl-dot span {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border: 2px solid #0052CC;
+  display: block;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.intro-slider.owl-carousel .owl-dots .owl-dot:hover span {
+  background-color: rgba(0, 51, 204, 0.7) !important;
+  transform: scale(1.2);
+}
+
+.intro-slider.owl-carousel .owl-dots .owl-dot.active span {
+  background-color: #0052CC !important;
+  width: 14px;
+  height: 14px;
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 51, 204, 0.6);
+}
+
+/* Responsive Navigation */
+@media (max-width: 767px) {
+  /* Hide arrows on mobile, show dots only */
+  .intro-slider.owl-carousel .owl-nav {
+    display: none;
+  }
+
+  .intro-slider.owl-carousel .owl-dots {
+    bottom: 15px;
+  }
+
+  .intro-slider.owl-carousel .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+  }
+
+  .intro-slider.owl-carousel .owl-dots .owl-dot.active span {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Smaller arrows on tablet */
+  .intro-slider.owl-carousel .owl-nav button.owl-prev,
+  .intro-slider.owl-carousel .owl-nav button.owl-next {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
+/* Remove intro-content (deprecated) */
+.intro-slider .intro-content {
+  display: none;
+}
+
+/* ========================================
+   CLICKABLE BANNER
+   ======================================== */
+
+/* Banner Link Wrapper */
+.intro-slider .banner-link-wrapper {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.intro-slider .banner-link-wrapper:hover {
+  opacity: 0.95;
+}
+
+/* Hover Effect - Overlay */
+.intro-slider .banner-link-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 51, 204, 0.1) 0%,
+    rgba(230, 57, 70, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.intro-slider .banner-link-wrapper:hover::after {
+  opacity: 1;
+}
+
+/* Banner Image in Link */
+.intro-slider .banner-link-wrapper .slide-image {
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+.intro-slider .banner-link-wrapper:hover .slide-image {
+  transform: scale(1.02);
+}
+
+/* Click Indicator (Optional) */
+.intro-slider .banner-link-wrapper:active .slide-image {
+  transform: scale(0.98);
+}
+
+/* Ensure figure margin is reset */
+.intro-slider figure.slide-image {
+  margin: 0;
+}
+
+/* ========================================
+   FEATURED PRODUCTS SECTION (DEMO4 STYLE)
+   ======================================== */
+
+/* Section Styling */
+.featured-products-section {
+  padding: 3rem 0;
+  background-color: #fff;
+}
+
+/* Section Title */
+.section-title.heading-border {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #222;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title.heading-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #0052CC 0%, #E63946 100%);
+}
+
+/* Product Default (Demo4 Style) - Option A: Fixed Height */
+.product-default {
+  position: relative;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-default figure {
+  position: relative;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 280px;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+.product-default figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-default:hover figure img {
+  transform: scale(1.05);
+}
+
+/* Label Group */
+.product-default .label-group {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.product-default .product-label {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+.product-default .label-hot {
+  background-color: #E63946;
+  color: #fff;
+}
+
+.product-default .label-sale {
+  background-color: #0052CC;
+  color: #fff;
+}
+
+.product-default .label-out {
+  background-color: #666;
+  color: #fff;
+}
+
+/* Product Details */
+.product-default .product-details {
+  text-align: left;
+  padding: 0 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-default .category-list {
+  margin-bottom: 0.5rem;
+}
+
+.product-default .product-category {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+  display: inline-block;
+}
+
+.product-default .product-category:hover {
+  color: #0052CC;
+}
+
+.product-default .product-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+  height: 40px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.product-default .product-title a {
+  color: #222;
+  transition: color 0.3s;
+}
+
+.product-default .product-title a:hover {
+  color: #0052CC;
+}
+
+/* Price Box */
+.product-default .price-box {
+  margin-bottom: 1rem;
+  min-height: 24px;
+}
+
+.product-default .old-price {
+  font-size: 13px;
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+
+.product-default .product-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #E63946;
+}
+
+/* Product Action */
+.product-default .product-action {
+  display: flex;
+  gap: 5px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  margin-top: 0.8rem;
+}
+
+.product-default .btn-icon-wish,
+.product-default .btn-quickview {
+  width: 36px;
+  height: 36px;
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: all 0.3s;
+}
+
+.product-default .btn-icon-wish:hover {
+  background-color: #E63946;
+  border-color: #E63946;
+  color: #fff;
+}
+
+.product-default .btn-quickview:hover {
+  background-color: #0052CC;
+  border-color: #0052CC;
+  color: #fff;
+}
+
+/* Ensure quickview button works as normal link (no modal) */
+.product-default .btn-quickview {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.product-default .btn-quickview:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 51, 204, 0.2);
+}
+
+.product-default .btn-add-cart {
+  width: 100%;
+  height: 40px;
+  background-color: #0052CC;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  padding: 0 15px;
+  text-decoration: none;
+}
+
+.product-default .btn-add-cart:hover {
+  background-color: #3385FF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 51, 204, 0.3);
+}
+
+.product-default .btn-add-cart.disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.product-default .btn-add-cart.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.product-default .btn-add-cart i {
+  font-size: 14px;
+}
+
+/* Owl Carousel Navigation for Products Slider */
+.products-slider.owl-carousel .owl-nav button.owl-prev,
+.products-slider.owl-carousel .owl-nav button.owl-next {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(0, 51, 204, 0.9) !important;
+  color: #fff !important;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: all 0.3s;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.products-slider.owl-carousel .owl-nav button.owl-prev {
+  left: -55px;
+}
+
+.products-slider.owl-carousel .owl-nav button.owl-next {
+  right: -55px;
+}
+
+.products-slider.owl-carousel .owl-nav button.owl-prev:hover,
+.products-slider.owl-carousel .owl-nav button.owl-next:hover {
+  background-color: #0052CC !important;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Responsive for Products Slider */
+@media (max-width: 1399px) {
+  .products-slider.owl-carousel .owl-nav button.owl-prev {
+    left: -25px;
+  }
+
+  .products-slider.owl-carousel .owl-nav button.owl-next {
+    right: -25px;
+  }
+}
+
+@media (max-width: 991px) {
+  .products-slider.owl-carousel .owl-nav button.owl-prev,
+  .products-slider.owl-carousel .owl-nav button.owl-next {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .section-title.heading-border {
+    font-size: 1.5rem;
+  }
+
+  /* Adjust image height for tablet */
+  .product-default figure {
+    height: 240px;
+  }
+}
+
+@media (max-width: 767px) {
+  .products-slider.owl-carousel .owl-nav {
+    display: none;
+  }
+
+  .featured-products-section {
+    padding: 2rem 0;
+  }
+
+  .product-default .product-action {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Adjust image height for mobile */
+  .product-default figure {
+    height: 180px;
+  }
+
+  /* Smaller text for mobile */
+  .product-default .product-title {
+    font-size: 13px;
+    height: 36px;
+  }
+
+  .product-default .product-price {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small mobile adjustments */
+  .product-default figure {
+    height: 160px;
+  }
+
+  .product-default .product-title {
+    font-size: 12px;
+    height: 34px;
+  }
+
+  .product-default .product-category {
+    font-size: 10px;
+  }
+
+  .product-default .btn-add-cart {
+    font-size: 10px;
+    padding: 0 10px;
+  }
+}
+
+/* Animation */
+.appear-animate {
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInRightShorter {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.appear-animate[data-animation-name="fadeInRightShorter"] {
+  animation-name: fadeInRightShorter;
+}
+
+/* ========================================
+   PRODUCT DETAIL - QUANTITY BUTTONS
+   ======================================== */
+
+/* Quantity Container - Set margin-right */
+.product-single-qty {
+  margin-right: 2.5rem !important;
+}
+
+/* Quantity Input Group */
+.product-single-qty .input-group {
+  display: flex;
+  align-items: stretch;
+  width: 150px;
+}
+
+.product-single-qty .form-control {
+  text-align: center;
+  border-left: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  font-size: 14px;
+  font-weight: 600;
+  height: 45px;
+  padding: 0;
+}
+
+/* Quantity Buttons */
+.product-single-qty .btn {
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e1e1e1;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.product-single-qty .btn:hover {
+  background-color: #0052CC;
+  border-color: #0052CC;
+  color: #fff;
+}
+
+.product-single-qty .btn:active {
+  transform: scale(0.95);
+}
+
+/* Hide duplicate buttons injected by bootstrap-touchspin plugin */
+/* Only hide buttons that are also marked as injected AND have onclick attribute */
+.product-single-qty .btn.bootstrap-touchspin-injected:not([onclick]) {
+  display: none !important;
+}
+
+/* Remove border radius from middle input */
+.product-single-qty .input-group-prepend .btn {
+  border-radius: 4px 0 0 4px;
+}
+
+.product-single-qty .input-group-append .btn {
+  border-radius: 0 4px 4px 0;
+}
+
+.product-single-qty .form-control {
+  border-radius: 0;
+}
+
+/* Product Action Buttons */
+.product-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.product-action .add-cart {
+  background-color: #0052CC !important;
+  border-color: #0052CC !important;
+  color: #fff !important;
+  min-width: 200px;
+}
+
+.product-action .add-cart:hover {
+  background-color: #3385FF !important;
+  border-color: #3385FF !important;
+}
+
+.product-action .add-wishlist {
+  background-color: #E63946 !important;
+  border-color: #E63946 !important;
+  color: #fff !important;
+}
+
+.product-action .add-wishlist:hover {
+  background-color: #FF4A57 !important;
+  border-color: #FF4A57 !important;
+}
+
+/* ========================================
+   WHATSAPP CHAT ADMIN BUTTON (PRODUCT DETAIL)
+   ======================================== */
+
+/* WhatsApp Button in Product Action */
+.btn-whatsapp-product {
+  background-color: #25D366 !important;
+  border-color: #25D366 !important;
+  color: #fff !important;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp-product:hover {
+  background-color: #20BA5A !important;
+  border-color: #20BA5A !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp-product:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp-product i {
+  font-size: 1.2em;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .btn-whatsapp-product {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .product-action {
+    flex-direction: column;
+  }
+
+  .product-action .add-cart,
+  .product-action .add-wishlist {
+    width: 100% !important;
+    min-width: auto;
+    margin-bottom: 0.5rem;
+    margin-right: 0 !important;
+  }
+
+  /* Quantity buttons for mobile */
+  .product-single-qty {
+    margin-right: 0 !important;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .product-single-qty .input-group {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .product-single-qty .btn {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 20px;
+    border: 2px solid #e1e1e1 !important;
+  }
+
+  .product-single-qty .form-control {
+    height: 50px !important;
+    font-size: 16px;
+    border: 2px solid #e1e1e1 !important;
+  }
+
+  /* Make sure icons/symbols are visible */
+  .product-single-qty .btn-down-icon::before {
+    content: "−";
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .product-single-qty .btn-up-icon::before {
+    content: "+";
+    font-size: 24px;
+    line-height: 1;
+  }
+}
+
+/* ========================================
+   SOCIAL MEDIA ICONS
+   ======================================== */
+
+/* TikTok Icon */
+.social-icon.social-tiktok {
+  color: #000 !important;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon.social-tiktok:hover {
+  color: #00f2ea !important;
+}
+
+.social-icon.social-tiktok svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Shopee Icon */
+.social-icon.social-shopee {
+  color: #ee4d2d !important;
+}
+
+.social-icon.social-shopee:hover {
+  color: #ff5a3a !important;
+}
+
+/* Tokopedia Icon */
+.social-icon.social-tokopedia {
+  color: #42b549 !important;
+}
+
+.social-icon.social-tokopedia:hover {
+  color: #52c559 !important;
+}
+
+/* ========================================
+   MISC
+   ======================================== */
+
+/* Spinner / Loading */
+.spinner-border.text-primary {
+  color: #0052CC !important;
+}
+
+/* Progress Bar */
+.progress-bar {
+  background-color: #0052CC !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #0052CC !important;
+}
+
+/* Selection */
+::selection {
+  background-color: #0052CC !important;
+  color: #fff !important;
+}
+
+::-moz-selection {
+  background-color: #0052CC !important;
+  color: #fff !important;
+}
