@@ -21,7 +21,7 @@
 	<meta property="og:site_name" content="<?= $site_settings['site_name'] ?? 'Putra Elektronik' ?>" />
 
 	<!-- Twitter Card Meta Tags -->
-	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:card" content="<?= $twitter_card_type ?? 'summary_large_image' ?>" />
 	<meta name="twitter:title" content="<?= $og_title ?>" />
 	<meta name="twitter:description" content="<?= $og_description ?>" />
 	<meta name="twitter:image" content="<?= $og_image ?>" />

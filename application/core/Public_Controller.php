@@ -51,16 +51,21 @@ class Public_Controller extends CI_Controller
             $this->data['wishlist_count'] = $this->Wishlist_model->count_by_customer($this->data['customer_id']);
         }
 
-        // Page meta defaults
+        // Page meta defaults - all loaded from site_settings
         $this->data['page_title'] = $this->data['site_settings']['site_name'] ?? 'Putra Elektronik';
         $this->data['meta_description'] = $this->data['site_settings']['meta_description'] ?? '';
         $this->data['meta_keywords'] = $this->data['site_settings']['meta_keywords'] ?? '';
 
-        // Open Graph defaults
-        $this->data['og_title'] = $this->data['site_settings']['site_name'] ?? 'Putra Elektronik';
-        $this->data['og_description'] = $this->data['site_settings']['meta_description'] ?? '';
-        $this->data['og_image'] = base_url('assets/images/logo-putra-elektronik.png');
+        // Open Graph defaults - all loaded from site_settings
+        $this->data['og_title'] = $this->data['site_settings']['og_title'] ?? ($this->data['site_settings']['site_name'] ?? 'Putra Elektronik');
+        $this->data['og_description'] = $this->data['site_settings']['og_description'] ?? ($this->data['site_settings']['meta_description'] ?? '');
+        $this->data['og_image'] = isset($this->data['site_settings']['og_image'])
+            ? base_url($this->data['site_settings']['og_image'])
+            : base_url('assets/images/logo-putra-elektronik.png');
         $this->data['og_url'] = current_url();
+
+        // Twitter Card settings - loaded from site_settings
+        $this->data['twitter_card_type'] = $this->data['site_settings']['twitter_card_type'] ?? 'summary_large_image';
     }
 
     /**
@@ -122,24 +127,57 @@ class Public_Controller extends CI_Controller
     }
 
     /**
-     * Set page meta
+     * Set page meta - all values fallback to site_settings
+     *
+     * @param string $title Page title (will append site_name from settings)
+     * @param string $description Meta description (defaults to site_settings value)
+     * @param string $keywords Meta keywords (defaults to site_settings value)
+     * @param string $og_image Open Graph image URL (defaults to site_settings value)
      */
     protected function set_meta($title = '', $description = '', $keywords = '', $og_image = '')
     {
+        // Set page title - always append site name from settings
         if ($title) {
-            $this->data['page_title'] = $title . ' - ' . $this->data['site_settings']['site_name'];
-            $this->data['og_title'] = $title . ' - ' . $this->data['site_settings']['site_name'];
+            $site_name = $this->data['site_settings']['site_name'] ?? 'UPGADGET';
+            $this->data['page_title'] = $title . ' - ' . $site_name;
+            $this->data['og_title'] = $title . ' - ' . $site_name;
+        } else {
+            // Use default from site_settings if no title provided
+            $this->data['page_title'] = $this->data['site_settings']['site_name'] ?? 'UPGADGET';
+            $this->data['og_title'] = $this->data['site_settings']['og_title'] ?? $this->data['page_title'];
         }
+
+        // Set meta description - fallback to site_settings
         if ($description) {
             $this->data['meta_description'] = $description;
             $this->data['og_description'] = $description;
+        } else {
+            // Keep existing from constructor (already loaded from site_settings)
+            $this->data['meta_description'] = $this->data['meta_description'] ?? ($this->data['site_settings']['meta_description'] ?? '');
+            $this->data['og_description'] = $this->data['og_description'] ?? ($this->data['site_settings']['og_description'] ?? $this->data['meta_description']);
         }
+
+        // Set meta keywords - fallback to site_settings
         if ($keywords) {
             $this->data['meta_keywords'] = $keywords;
+        } else {
+            // Keep existing from constructor (already loaded from site_settings)
+            $this->data['meta_keywords'] = $this->data['meta_keywords'] ?? ($this->data['site_settings']['meta_keywords'] ?? '');
         }
+
+        // Set Open Graph image - fallback to site_settings
         if ($og_image) {
             $this->data['og_image'] = $og_image;
+        } else {
+            // Keep existing from constructor (already loaded from site_settings)
+            if (!isset($this->data['og_image']) || empty($this->data['og_image'])) {
+                $this->data['og_image'] = isset($this->data['site_settings']['og_image'])
+                    ? base_url($this->data['site_settings']['og_image'])
+                    : base_url('assets/images/logo-putra-elektronik.png');
+            }
         }
+
+        // Always update current URL
         $this->data['og_url'] = current_url();
     }
 
