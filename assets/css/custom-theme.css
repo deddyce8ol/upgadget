@@ -1,35 +1,42 @@
 /**
  * Custom Theme CSS - Putra Elektronik
- * Berdasarkan warna dari logo baru (hexagon icon)
+ * Natural Titanium Premium Theme
  *
  * Warna Utama:
- * - Biru Primary: #0052CC (dari logo baru - modern & professional)
- * - Merah Secondary: #E63946 (accent color untuk promo & highlights)
+ * - Titanium Gray: #8B8E93 (Header utama, judul produk)
+ * - Dark Titanium: #5A5D62 (Background section, footer)
+ * - Light Titanium: #C8CACF (Background kartu produk, border)
+ * - Pure White: #FFFFFF (Background utama, teks di atas warna gelap)
+ * - Off White: #F5F5F7 (Background alternatif, section separator)
+ * - Deep Black: #1D1D1F (Teks utama, icon)
+ * - Apple Blue: #0071E3 (Button CTA)
+ * - Success Green: #34C759 (Badge "Ready Stock")
+ * - Warm Gold: #D4AF37 (Badge "Promo")
  */
 
 /* ========================================
-   PRIMARY COLOR (BIRU)
+   PRIMARY COLOR (APPLE BLUE)
    ======================================== */
 
 /* Button Primary */
 .btn-primary {
-  border-color: #0052CC !important;
-  background-color: #0052CC !important;
+  border-color: #0071E3 !important;
+  background-color: #0071E3 !important;
   color: #fff !important;
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary.focus {
-  border-color: #3385FF !important;
-  background-color: #3385FF !important;
+  border-color: #005BB5 !important;
+  background-color: #005BB5 !important;
   color: #fff !important;
 }
 
 .btn-primary.disabled,
 .btn-primary:disabled {
-  border-color: #0052CC !important;
-  background-color: #0052CC !important;
+  border-color: #0071E3 !important;
+  background-color: #0071E3 !important;
   color: #fff !important;
   opacity: 0.65;
 }
@@ -37,75 +44,75 @@
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
-  border-color: #003D99 !important;
-  background-color: #003D99 !important;
+  border-color: #004A94 !important;
+  background-color: #004A94 !important;
   color: #fff !important;
 }
 
 /* Background Primary */
 .bg-primary {
-  background-color: #0052CC !important;
+  background-color: #0071E3 !important;
 }
 
 /* Text Primary */
 .text-primary {
-  color: #0052CC !important;
+  color: #0071E3 !important;
 }
 
 /* Border Primary */
 .border-primary {
-  border-color: #0052CC !important;
+  border-color: #0071E3 !important;
 }
 
 /* Links */
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #3385FF !important;
+  color: #005BB5 !important;
 }
 
 /* ========================================
-   SECONDARY COLOR (MERAH)
+   SECONDARY COLOR (WARM GOLD)
    ======================================== */
 
 /* Button Secondary */
 .btn-secondary {
-  border-color: #E63946 !important;
-  background-color: #E63946 !important;
-  color: #fff !important;
+  border-color: #D4AF37 !important;
+  background-color: #D4AF37 !important;
+  color: #1D1D1F !important;
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus,
 .btn-secondary.focus {
-  border-color: #FF4A57 !important;
-  background-color: #FF4A57 !important;
-  color: #fff !important;
+  border-color: #B8942E !important;
+  background-color: #B8942E !important;
+  color: #1D1D1F !important;
 }
 
 .btn-secondary.disabled,
 .btn-secondary:disabled {
-  border-color: #E63946 !important;
-  background-color: #E63946 !important;
-  color: #fff !important;
+  border-color: #D4AF37 !important;
+  background-color: #D4AF37 !important;
+  color: #1D1D1F !important;
   opacity: 0.65;
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active,
 .btn-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-secondary.dropdown-toggle {
-  border-color: #C5303C !important;
-  background-color: #C5303C !important;
+  border-color: #9D7B26 !important;
+  background-color: #9D7B26 !important;
   color: #fff !important;
 }
 
 /* Background Secondary */
 .bg-secondary {
-  background-color: #E63946 !important;
+  background-color: #D4AF37 !important;
 }
 
 /* Text Secondary */
 .text-secondary {
-  color: #E63946 !important;
+  color: #8B8E93 !important;
 }
 
 /* ========================================
@@ -114,18 +121,35 @@ a.text-primary:focus {
 
 /* Top Notice Bar */
 .top-notice.bg-primary {
-  background-color: #0052CC !important;
+  background-color: #5A5D62 !important;
+  color: #FFFFFF !important;
+}
+
+/* Header Background - Dark Titanium */
+.header {
+  background-color: #5A5D62 !important;
+  color: #FFFFFF !important;
+}
+
+.header a {
+  color: #FFFFFF !important;
 }
 
 /* Mobile Menu Toggle */
 .mobile-menu-toggler.text-primary {
-  color: #0052CC !important;
+  color: #FFFFFF !important;
 }
 
 /* Header Links Hover */
 .header a:hover,
 .main-nav a:hover {
-  color: #0052CC !important;
+  color: #0071E3 !important;
+}
+
+/* Sticky Header */
+.sticky-header.fixed {
+  background-color: #5A5D62 !important;
+  box-shadow: 0 2px 10px rgba(29, 29, 31, 0.15);
 }
 
 /* ========================================
@@ -134,29 +158,31 @@ a.text-primary:focus {
 
 /* Product Labels */
 .product-label.label-hot {
-  background-color: #E63946 !important;
+  background-color: #D4AF37 !important;
+  color: #1D1D1F !important;
 }
 
 /* Product Prices */
 .product-price .new-price {
-  color: #E63946 !important;
+  color: #0071E3 !important;
+  font-weight: 700;
 }
 
 /* Add to Cart Button */
 .btn-product.btn-cart {
-  background-color: #0052CC !important;
-  border-color: #0052CC !important;
+  background-color: #0071E3 !important;
+  border-color: #0071E3 !important;
 }
 
 .btn-product.btn-cart:hover {
-  background-color: #3385FF !important;
-  border-color: #3385FF !important;
+  background-color: #005BB5 !important;
+  border-color: #005BB5 !important;
 }
 
 /* Wishlist Button */
 .btn-product-icon.btn-wishlist:hover {
-  background-color: #E63946 !important;
-  border-color: #E63946 !important;
+  background-color: #0071E3 !important;
+  border-color: #0071E3 !important;
 }
 
 /* ========================================
@@ -165,28 +191,28 @@ a.text-primary:focus {
 
 /* Outline Primary Button */
 .btn-outline-primary {
-  color: #0052CC !important;
-  border-color: #0052CC !important;
+  color: #0071E3 !important;
+  border-color: #0071E3 !important;
 }
 
 .btn-outline-primary:hover,
 .btn-outline-primary:focus {
   color: #fff !important;
-  background-color: #0052CC !important;
-  border-color: #0052CC !important;
+  background-color: #0071E3 !important;
+  border-color: #0071E3 !important;
 }
 
 /* Outline Secondary Button */
 .btn-outline-secondary {
-  color: #E63946 !important;
-  border-color: #E63946 !important;
+  color: #8B8E93 !important;
+  border-color: #8B8E93 !important;
 }
 
 .btn-outline-secondary:hover,
 .btn-outline-secondary:focus {
   color: #fff !important;
-  background-color: #E63946 !important;
-  border-color: #E63946 !important;
+  background-color: #8B8E93 !important;
+  border-color: #8B8E93 !important;
 }
 
 /* ========================================
@@ -195,17 +221,26 @@ a.text-primary:focus {
 
 /* Badge Primary */
 .badge-primary {
-  background-color: #0052CC !important;
+  background-color: #0071E3 !important;
+  color: #FFFFFF !important;
 }
 
 /* Badge Secondary */
 .badge-secondary {
-  background-color: #E63946 !important;
+  background-color: #D4AF37 !important;
+  color: #1D1D1F !important;
+}
+
+/* Badge Success - Ready Stock */
+.badge-success {
+  background-color: #34C759 !important;
+  color: #FFFFFF !important;
 }
 
 /* Badge Circle (Cart Count, Wishlist Count) */
 .badge-circle {
-  background-color: #E63946 !important;
+  background-color: #0071E3 !important;
+  color: #FFFFFF !important;
 }
 
 /* ========================================
@@ -214,14 +249,14 @@ a.text-primary:focus {
 
 /* Input Focus */
 .form-control:focus {
-  border-color: #0052CC !important;
-  box-shadow: 0 0 0 0.2rem rgba(0, 51, 204, 0.25) !important;
+  border-color: #0071E3 !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 113, 227, 0.25) !important;
 }
 
 /* Checkbox & Radio Checked */
 .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: #0052CC !important;
-  border-color: #0052CC !important;
+  background-color: #0071E3 !important;
+  border-color: #0071E3 !important;
 }
 
 /* ========================================
@@ -230,16 +265,16 @@ a.text-primary:focus {
 
 /* Alert Success */
 .alert-success {
-  background-color: rgba(0, 51, 204, 0.1) !important;
-  border-color: #0052CC !important;
-  color: #003D99 !important;
+  background-color: rgba(52, 199, 89, 0.1) !important;
+  border-color: #34C759 !important;
+  color: #1D1D1F !important;
 }
 
 /* Alert Danger */
 .alert-danger {
-  background-color: rgba(230, 57, 70, 0.1) !important;
-  border-color: #E63946 !important;
-  color: #C5303C !important;
+  background-color: rgba(255, 59, 48, 0.1) !important;
+  border-color: #FF3B30 !important;
+  color: #1D1D1F !important;
 }
 
 /* ========================================
@@ -247,18 +282,19 @@ a.text-primary:focus {
    ======================================== */
 
 .page-link {
-  color: #0052CC !important;
+  color: #0071E3 !important;
 }
 
 .page-link:hover {
-  color: #3385FF !important;
-  background-color: rgba(0, 51, 204, 0.1) !important;
-  border-color: #0052CC !important;
+  color: #005BB5 !important;
+  background-color: #F5F5F7 !important;
+  border-color: #C8CACF !important;
 }
 
 .page-item.active .page-link {
-  background-color: #0052CC !important;
-  border-color: #0052CC !important;
+  background-color: #0071E3 !important;
+  border-color: #0071E3 !important;
+  color: #FFFFFF !important;
 }
 
 /* ========================================
@@ -267,12 +303,12 @@ a.text-primary:focus {
 
 /* Owl Carousel Dots */
 .owl-carousel .owl-dot.active span {
-  background-color: #0052CC !important;
+  background-color: #0071E3 !important;
 }
 
 /* Owl Carousel Nav */
 .owl-carousel .owl-nav button:hover {
-  background-color: #0052CC !important;
+  background-color: #0071E3 !important;
   color: #fff !important;
 }
 
@@ -315,7 +351,7 @@ a.text-primary:focus {
 .header .logo-text div {
   font-size: 16px;
   font-weight: 700;
-  color: #0052CC;
+  color: #FFFFFF;
   letter-spacing: 0.5px;
   font-family: 'Poppins', sans-serif;
   white-space: nowrap;
@@ -363,6 +399,7 @@ a.text-primary:focus {
 .intro-slider-container {
   position: relative;
   width: 100%;
+  background-color: #F5F5F7;
 }
 
 /* Slider Image Full Width */
@@ -386,7 +423,7 @@ a.text-primary:focus {
 .intro-slider .intro-subtitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #0052CC;
+  color: #8B8E93;
   margin-bottom: 1rem;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
@@ -450,7 +487,7 @@ a.text-primary:focus {
 
 .intro-slider.owl-carousel .owl-nav button.owl-prev,
 .intro-slider.owl-carousel .owl-nav button.owl-next {
-  background-color: rgba(0, 51, 204, 0.85) !important;
+  background-color: rgba(0, 113, 227, 0.9) !important;
   color: #fff !important;
   width: 55px;
   height: 55px;
@@ -460,15 +497,15 @@ a.text-primary:focus {
   text-align: center;
   transition: all 0.3s ease;
   pointer-events: auto;
-  box-shadow: 0 4px 12px rgba(0, 51, 204, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
   border: 2px solid transparent;
 }
 
 .intro-slider.owl-carousel .owl-nav button.owl-prev:hover,
 .intro-slider.owl-carousel .owl-nav button.owl-next:hover {
-  background-color: #0052CC !important;
+  background-color: #005BB5 !important;
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 51, 204, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 113, 227, 0.5);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -508,23 +545,23 @@ a.text-primary:focus {
   width: 12px;
   height: 12px;
   background-color: rgba(255, 255, 255, 0.6) !important;
-  border: 2px solid #0052CC;
+  border: 2px solid #8B8E93;
   display: block;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 
 .intro-slider.owl-carousel .owl-dots .owl-dot:hover span {
-  background-color: rgba(0, 51, 204, 0.7) !important;
+  background-color: rgba(0, 113, 227, 0.7) !important;
   transform: scale(1.2);
 }
 
 .intro-slider.owl-carousel .owl-dots .owl-dot.active span {
-  background-color: #0052CC !important;
+  background-color: #0071E3 !important;
   width: 14px;
   height: 14px;
   border-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 51, 204, 0.6);
+  box-shadow: 0 0 10px rgba(0, 113, 227, 0.6);
 }
 
 /* Responsive Navigation */
@@ -590,8 +627,8 @@ a.text-primary:focus {
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(0, 51, 204, 0.1) 0%,
-    rgba(230, 57, 70, 0.1) 100%
+    rgba(139, 142, 147, 0.1) 0%,
+    rgba(0, 113, 227, 0.1) 100%
   );
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -629,7 +666,7 @@ a.text-primary:focus {
 /* Section Styling */
 .featured-products-section {
   padding: 3rem 0;
-  background-color: #fff;
+  background-color: #F5F5F7;
 }
 
 /* Section Title */
@@ -638,7 +675,7 @@ a.text-primary:focus {
   font-weight: 700;
   text-align: center;
   margin-bottom: 2.5rem;
-  color: #222;
+  color: #1D1D1F;
   position: relative;
   padding-bottom: 1rem;
 }
@@ -651,7 +688,7 @@ a.text-primary:focus {
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #0052CC 0%, #E63946 100%);
+  background: linear-gradient(90deg, #8B8E93 0%, #0071E3 100%);
 }
 
 /* Product Default (Demo4 Style) - Option A: Fixed Height */
@@ -662,6 +699,16 @@ a.text-primary:focus {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #C8CACF;
+  overflow: hidden;
+}
+
+.product-default:hover {
+  box-shadow: 0 8px 24px rgba(139, 142, 147, 0.15);
+  transform: translateY(-4px);
+  border-color: #8B8E93;
 }
 
 .product-default figure {
@@ -671,7 +718,7 @@ a.text-primary:focus {
   border-radius: 8px;
   height: 280px;
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: #F5F5F7;
 }
 
 .product-default figure img {
@@ -682,7 +729,7 @@ a.text-primary:focus {
 }
 
 .product-default:hover figure img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Label Group */
@@ -707,24 +754,24 @@ a.text-primary:focus {
 }
 
 .product-default .label-hot {
-  background-color: #E63946;
-  color: #fff;
+  background-color: #D4AF37;
+  color: #1D1D1F;
 }
 
 .product-default .label-sale {
-  background-color: #0052CC;
-  color: #fff;
+  background-color: #0071E3;
+  color: #FFFFFF;
 }
 
 .product-default .label-out {
-  background-color: #666;
-  color: #fff;
+  background-color: #8B8E93;
+  color: #FFFFFF;
 }
 
 /* Product Details */
 .product-default .product-details {
   text-align: left;
-  padding: 0 5px;
+  padding: 0 15px 15px 15px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -736,7 +783,7 @@ a.text-primary:focus {
 
 .product-default .product-category {
   font-size: 12px;
-  color: #999;
+  color: #8B8E93;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: color 0.3s;
@@ -744,7 +791,7 @@ a.text-primary:focus {
 }
 
 .product-default .product-category:hover {
-  color: #0052CC;
+  color: #0071E3;
 }
 
 .product-default .product-title {
@@ -761,12 +808,12 @@ a.text-primary:focus {
 }
 
 .product-default .product-title a {
-  color: #222;
+  color: #1D1D1F;
   transition: color 0.3s;
 }
 
 .product-default .product-title a:hover {
-  color: #0052CC;
+  color: #0071E3;
 }
 
 /* Price Box */
@@ -777,7 +824,7 @@ a.text-primary:focus {
 
 .product-default .old-price {
   font-size: 13px;
-  color: #999;
+  color: #8B8E93;
   text-decoration: line-through;
   margin-right: 8px;
 }
@@ -785,7 +832,7 @@ a.text-primary:focus {
 .product-default .product-price {
   font-size: 16px;
   font-weight: 700;
-  color: #E63946;
+  color: #0071E3;
 }
 
 /* Product Action */
@@ -802,26 +849,26 @@ a.text-primary:focus {
 .product-default .btn-quickview {
   width: 36px;
   height: 36px;
-  background-color: #fff;
-  border: 1px solid #e1e1e1;
+  background-color: #F5F5F7;
+  border: 1px solid #C8CACF;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: #5A5D62;
   transition: all 0.3s;
 }
 
 .product-default .btn-icon-wish:hover {
-  background-color: #E63946;
-  border-color: #E63946;
-  color: #fff;
+  background-color: #0071E3;
+  border-color: #0071E3;
+  color: #FFFFFF;
 }
 
 .product-default .btn-quickview:hover {
-  background-color: #0052CC;
-  border-color: #0052CC;
-  color: #fff;
+  background-color: #8B8E93;
+  border-color: #8B8E93;
+  color: #FFFFFF;
 }
 
 /* Ensure quickview button works as normal link (no modal) */
@@ -832,14 +879,14 @@ a.text-primary:focus {
 
 .product-default .btn-quickview:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 51, 204, 0.2);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
 }
 
 .product-default .btn-add-cart {
   width: 100%;
   height: 40px;
-  background-color: #0052CC;
-  color: #fff;
+  background-color: #0071E3;
+  color: #FFFFFF;
   border: none;
   border-radius: 8px;
   display: flex;
@@ -855,13 +902,13 @@ a.text-primary:focus {
 }
 
 .product-default .btn-add-cart:hover {
-  background-color: #3385FF;
+  background-color: #005BB5;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 51, 204, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
 }
 
 .product-default .btn-add-cart.disabled {
-  background-color: #999;
+  background-color: #8B8E93;
   cursor: not-allowed;
 }
 
@@ -879,7 +926,7 @@ a.text-primary:focus {
 .products-slider.owl-carousel .owl-nav button.owl-next {
   width: 45px;
   height: 45px;
-  background-color: rgba(0, 51, 204, 0.9) !important;
+  background-color: rgba(0, 113, 227, 0.9) !important;
   color: #fff !important;
   border-radius: 50%;
   font-size: 20px;
@@ -899,7 +946,7 @@ a.text-primary:focus {
 
 .products-slider.owl-carousel .owl-nav button.owl-prev:hover,
 .products-slider.owl-carousel .owl-nav button.owl-next:hover {
-  background-color: #0052CC !important;
+  background-color: #005BB5 !important;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -1022,12 +1069,13 @@ a.text-primary:focus {
 
 .product-single-qty .form-control {
   text-align: center;
-  border-left: 1px solid #e1e1e1;
-  border-right: 1px solid #e1e1e1;
+  border-left: 1px solid #C8CACF;
+  border-right: 1px solid #C8CACF;
   font-size: 14px;
   font-weight: 600;
   height: 45px;
   padding: 0;
+  color: #1D1D1F;
 }
 
 /* Quantity Buttons */
@@ -1038,16 +1086,16 @@ a.text-primary:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #e1e1e1;
-  background-color: #fff;
-  color: #333;
+  border: 1px solid #C8CACF;
+  background-color: #F5F5F7;
+  color: #1D1D1F;
   transition: all 0.3s ease;
 }
 
 .product-single-qty .btn:hover {
-  background-color: #0052CC;
-  border-color: #0052CC;
-  color: #fff;
+  background-color: #0071E3;
+  border-color: #0071E3;
+  color: #FFFFFF;
 }
 
 .product-single-qty .btn:active {
@@ -1083,26 +1131,26 @@ a.text-primary:focus {
 }
 
 .product-action .add-cart {
-  background-color: #0052CC !important;
-  border-color: #0052CC !important;
+  background-color: #0071E3 !important;
+  border-color: #0071E3 !important;
   color: #fff !important;
   min-width: 200px;
 }
 
 .product-action .add-cart:hover {
-  background-color: #3385FF !important;
-  border-color: #3385FF !important;
+  background-color: #005BB5 !important;
+  border-color: #005BB5 !important;
 }
 
 .product-action .add-wishlist {
-  background-color: #E63946 !important;
-  border-color: #E63946 !important;
+  background-color: #8B8E93 !important;
+  border-color: #8B8E93 !important;
   color: #fff !important;
 }
 
 .product-action .add-wishlist:hover {
-  background-color: #FF4A57 !important;
-  border-color: #FF4A57 !important;
+  background-color: #5A5D62 !important;
+  border-color: #5A5D62 !important;
 }
 
 /* ========================================
@@ -1173,13 +1221,13 @@ a.text-primary:focus {
     width: 50px !important;
     height: 50px !important;
     font-size: 20px;
-    border: 2px solid #e1e1e1 !important;
+    border: 2px solid #C8CACF !important;
   }
 
   .product-single-qty .form-control {
     height: 50px !important;
     font-size: 16px;
-    border: 2px solid #e1e1e1 !important;
+    border: 2px solid #C8CACF !important;
   }
 
   /* Make sure icons/symbols are visible */
@@ -1202,7 +1250,7 @@ a.text-primary:focus {
 
 /* TikTok Icon */
 .social-icon.social-tiktok {
-  color: #000 !important;
+  color: #1D1D1F !important;
   font-size: 14px;
   display: inline-flex;
   align-items: center;
@@ -1240,31 +1288,109 @@ a.text-primary:focus {
 }
 
 /* ========================================
+   FOOTER
+   ======================================== */
+
+/* Footer Background - Dark Titanium */
+.footer {
+  background-color: #5A5D62 !important;
+  color: #FFFFFF !important;
+}
+
+.footer a {
+  color: #FFFFFF !important;
+}
+
+.footer a:hover {
+  color: #0071E3 !important;
+}
+
+.footer .widget-title {
+  color: #FFFFFF !important;
+  border-bottom: 2px solid #8B8E93;
+}
+
+/* ========================================
    MISC
    ======================================== */
 
 /* Spinner / Loading */
 .spinner-border.text-primary {
-  color: #0052CC !important;
+  color: #0071E3 !important;
 }
 
 /* Progress Bar */
 .progress-bar {
-  background-color: #0052CC !important;
+  background-color: #0071E3 !important;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar-thumb {
-  background-color: #0052CC !important;
+  background-color: #8B8E93 !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0071E3 !important;
 }
 
 /* Selection */
 ::selection {
-  background-color: #0052CC !important;
+  background-color: #0071E3 !important;
   color: #fff !important;
 }
 
 ::-moz-selection {
-  background-color: #0052CC !important;
+  background-color: #0071E3 !important;
   color: #fff !important;
+}
+
+/* Body Background */
+body {
+  background-color: #F5F5F7 !important;
+  color: #1D1D1F !important;
+}
+
+/* Main Content Background */
+.main {
+  background-color: #FFFFFF;
+}
+
+/* Card Elements */
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #C8CACF;
+  border-radius: 12px;
+}
+
+.card-header {
+  background-color: #F5F5F7;
+  border-bottom: 1px solid #C8CACF;
+}
+
+/* Table Styling */
+.table {
+  color: #1D1D1F;
+}
+
+.table thead th {
+  background-color: #F5F5F7;
+  color: #5A5D62;
+  border-bottom: 2px solid #C8CACF;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #F5F5F7;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background-color: #F5F5F7;
+}
+
+.breadcrumb-item a {
+  color: #0071E3;
+}
+
+.breadcrumb-item.active {
+  color: #8B8E93;
 }
