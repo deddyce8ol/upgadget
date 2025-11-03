@@ -10,21 +10,28 @@
 
 	<meta name="keywords" content="<?= $meta_keywords ?>" />
 	<meta name="description" content="<?= $meta_description ?>">
-	<meta name="author" content="Putra Elektronik">
+	<meta name="author" content="UpGadget">
 
-	<!-- Open Graph Meta Tags -->
+	<!-- Open Graph Meta Tags - All from site_settings -->
 	<meta property="og:title" content="<?= $og_title ?>" />
 	<meta property="og:description" content="<?= $og_description ?>" />
 	<meta property="og:image" content="<?= $og_image ?>" />
 	<meta property="og:url" content="<?= $og_url ?>" />
-	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="<?= $site_settings['site_name'] ?? 'Putra Elektronik' ?>" />
+	<meta property="og:type" content="<?= $og_type ?>" />
+	<meta property="og:locale" content="<?= $og_locale ?>" />
+	<meta property="og:site_name" content="<?= $og_site_name ?>" />
 
-	<!-- Twitter Card Meta Tags -->
-	<meta name="twitter:card" content="<?= $twitter_card_type ?? 'summary_large_image' ?>" />
+	<!-- Twitter Card Meta Tags - All from site_settings -->
+	<meta name="twitter:card" content="<?= $twitter_card_type ?>" />
 	<meta name="twitter:title" content="<?= $og_title ?>" />
 	<meta name="twitter:description" content="<?= $og_description ?>" />
 	<meta name="twitter:image" content="<?= $og_image ?>" />
+	<?php if (!empty($twitter_site)): ?>
+	<meta name="twitter:site" content="<?= $twitter_site ?>" />
+	<?php endif; ?>
+	<?php if (!empty($twitter_creator)): ?>
+	<meta name="twitter:creator" content="<?= $twitter_creator ?>" />
+	<?php endif; ?>
 
 	<!-- Favicon -->
 	<?php
@@ -62,7 +69,7 @@
 	<link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/vendor/fontawesome-free/css/all.min.css') ?>">
 
-	<!-- Custom Theme CSS - Putra Elektronik Brand Colors -->
+	<!-- Custom Theme CSS - UpGadget Brand Colors -->
 	<link rel="stylesheet" href="<?= base_url('assets/css/custom-theme.css') ?>">
 
 	<!-- Custom CSS -->
@@ -156,8 +163,8 @@
 							<?php
 							$logo_url = !empty($site_settings['site_logo'])
 								? base_url('uploads/' . $site_settings['site_logo'])
-								: base_url('assets/images/logo-putra-elektronik.png');
-							$site_name = $site_settings['site_name'] ?? 'Putra Elektronik';
+								: base_url('uploads/logo_1762168678_69088f66e69d3.jpg');
+							$site_name = $site_settings['site_name'] ?? 'UpGadget';
 							$logo_text_parts = explode(' ', $site_name, 2);
 							?>
 							<img src="<?= $logo_url ?>" width="auto" height="45" alt="<?= $site_name ?>" style="max-height: 45px; width: auto;">

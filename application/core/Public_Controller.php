@@ -52,20 +52,30 @@ class Public_Controller extends CI_Controller
         }
 
         // Page meta defaults - all loaded from site_settings
-        $this->data['page_title'] = $this->data['site_settings']['site_name'] ?? 'Putra Elektronik';
+        $this->data['page_title'] = $this->data['site_settings']['site_name'] ?? 'Up Gadget';
         $this->data['meta_description'] = $this->data['site_settings']['meta_description'] ?? '';
         $this->data['meta_keywords'] = $this->data['site_settings']['meta_keywords'] ?? '';
 
         // Open Graph defaults - all loaded from site_settings
-        $this->data['og_title'] = $this->data['site_settings']['og_title'] ?? ($this->data['site_settings']['site_name'] ?? 'Putra Elektronik');
+        $this->data['og_title'] = $this->data['site_settings']['og_title'] ?? ($this->data['site_settings']['site_name'] ?? 'Up Gadget');
         $this->data['og_description'] = $this->data['site_settings']['og_description'] ?? ($this->data['site_settings']['meta_description'] ?? '');
-        $this->data['og_image'] = isset($this->data['site_settings']['og_image'])
-            ? base_url($this->data['site_settings']['og_image'])
-            : base_url('assets/images/logo-putra-elektronik.png');
-        $this->data['og_url'] = current_url();
 
-        // Twitter Card settings - loaded from site_settings
+        // og_image uses site_logo from site_settings
+        if (!empty($this->data['site_settings']['site_logo'])) {
+            $this->data['og_image'] = base_url('uploads/' . $this->data['site_settings']['site_logo']);
+        } else {
+            $this->data['og_image'] = base_url('uploads/logo_1762168678_69088f66e69d3.jpg');
+        }
+
+        $this->data['og_url'] = current_url();
+        $this->data['og_type'] = $this->data['site_settings']['og_type'] ?? 'website';
+        $this->data['og_locale'] = $this->data['site_settings']['og_locale'] ?? 'id_ID';
+        $this->data['og_site_name'] = $this->data['site_settings']['site_name'] ?? 'UPGADGET';
+
+        // Twitter Card settings - all loaded from site_settings
         $this->data['twitter_card_type'] = $this->data['site_settings']['twitter_card_type'] ?? 'summary_large_image';
+        $this->data['twitter_site'] = $this->data['site_settings']['twitter_site'] ?? '';
+        $this->data['twitter_creator'] = $this->data['site_settings']['twitter_creator'] ?? '';
     }
 
     /**
@@ -133,8 +143,9 @@ class Public_Controller extends CI_Controller
      * @param string $description Meta description (defaults to site_settings value)
      * @param string $keywords Meta keywords (defaults to site_settings value)
      * @param string $og_image Open Graph image URL (defaults to site_settings value)
+     * @param string $og_type Open Graph type (defaults to site_settings value, usually 'website', 'article', 'product')
      */
-    protected function set_meta($title = '', $description = '', $keywords = '', $og_image = '')
+    protected function set_meta($title = '', $description = '', $keywords = '', $og_image = '', $og_type = '')
     {
         // Set page title - always append site name from settings
         if ($title) {
@@ -165,16 +176,26 @@ class Public_Controller extends CI_Controller
             $this->data['meta_keywords'] = $this->data['meta_keywords'] ?? ($this->data['site_settings']['meta_keywords'] ?? '');
         }
 
-        // Set Open Graph image - fallback to site_settings
+        // Set Open Graph image - fallback to site_logo from site_settings
         if ($og_image) {
             $this->data['og_image'] = $og_image;
         } else {
-            // Keep existing from constructor (already loaded from site_settings)
+            // Keep existing from constructor (already loaded from site_settings site_logo)
             if (!isset($this->data['og_image']) || empty($this->data['og_image'])) {
-                $this->data['og_image'] = isset($this->data['site_settings']['og_image'])
-                    ? base_url($this->data['site_settings']['og_image'])
-                    : base_url('assets/images/logo-putra-elektronik.png');
+                if (!empty($this->data['site_settings']['site_logo'])) {
+                    $this->data['og_image'] = base_url('uploads/' . $this->data['site_settings']['site_logo']);
+                } else {
+                    $this->data['og_image'] = base_url('uploads/logo_1762168678_69088f66e69d3.jpg');
+                }
             }
+        }
+
+        // Set Open Graph type - fallback to site_settings
+        if ($og_type) {
+            $this->data['og_type'] = $og_type;
+        } else {
+            // Keep existing from constructor (already loaded from site_settings)
+            $this->data['og_type'] = $this->data['og_type'] ?? ($this->data['site_settings']['og_type'] ?? 'website');
         }
 
         // Always update current URL

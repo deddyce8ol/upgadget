@@ -52,7 +52,7 @@ class Home extends Public_Controller
             'Home',
             $this->data['site_settings']['meta_description'] ?? '',
             $this->data['site_settings']['meta_keywords'] ?? '',
-            base_url('assets/images/logo-putra-elektronik.png')
+            base_url('uploads/logo_1762168678_69088f66e69d3.jpg')
         );
 
         $this->render('public/home/index', $data);
