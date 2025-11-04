@@ -3,8 +3,7 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <a href="<?= base_url(); ?>" class="d-flex align-items-center">
-                        <img src="<?= base_url('assets/images/logo-putra-elektronik.png'); ?>" alt="<?= getenv('APP_NAME'); ?>" style="max-height: 40px; width: auto; margin-right: 10px;" />
+                    <a href="<?= base_url(); ?>">
                         <h5 class="mb-0"><?= getenv('APP_NAME'); ?></h5>
                     </a>
                 </div>
