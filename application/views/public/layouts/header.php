@@ -72,6 +72,9 @@
 	<!-- Custom Theme CSS - UpGadget Brand Colors -->
 	<link rel="stylesheet" href="<?= base_url('assets/css/custom-theme.css') ?>">
 
+	<!-- Chatbot CSS -->
+	<link rel="stylesheet" href="<?= base_url('assets/css/chat-bot.css') ?>">
+
 	<!-- Custom CSS -->
 	<?php if (isset($custom_css)): ?>
 		<?php foreach ($custom_css as $css): ?>
