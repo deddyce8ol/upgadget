@@ -7,7 +7,29 @@
     <title><?= getenv('APP_NAME') . ' - ' . $title; ?></title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/images/icons/favicon.ico') ?>">
+    <?php
+    // Load site settings to get the favicon
+    $CI =& get_instance();
+    if (!$CI->load->is_loaded('Site_setting_model')) {
+        $CI->load->model('Site_setting_model');
+    }
+
+    // Try site_favicon first, then site_logo, then default
+    $favicon_setting = $CI->Site_setting_model->get_value('site_favicon');
+    if (empty($favicon_setting)) {
+        $favicon_setting = $CI->Site_setting_model->get_value('site_logo');
+    }
+
+    $favicon_url = !empty($favicon_setting)
+        ? base_url('uploads/' . $favicon_setting)
+        : base_url('assets/images/icons/favicon.ico');
+    ?>
+    <link rel="icon" type="image/x-icon" href="<?= $favicon_url ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= $favicon_url ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= $favicon_url ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= $favicon_url ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?= $favicon_url ?>">
+    <link rel="icon" type="image/png" sizes="512x512" href="<?= $favicon_url ?>">
 
     <!-- Assets -->
     <link rel="stylesheet" href="<?= base_url(); ?>template/mazer/dist/assets/compiled/css/app.css">

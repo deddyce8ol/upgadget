@@ -115,7 +115,7 @@
 										<li><a href="<?= base_url('page/about') ?>">Tentang Kami</a></li>
 										<li><a href="<?= base_url('customer/wishlist') ?>">Wishlist</a></li>
 										<li><a href="<?= base_url('cart') ?>">Keranjang</a></li>
-										<li><a href="<?= base_url('customer/login') ?>" class="login-link">Login</a></li>
+										<li><a href="<?= base_url('customer/login') ?>">Login</a></li>
 									<?php endif; ?>
 								</ul>
 							</div><!-- End .header-menu -->
