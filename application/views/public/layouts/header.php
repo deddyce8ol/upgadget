@@ -37,7 +37,7 @@
 	<?php
 	$favicon_url = !empty($site_settings['site_favicon'])
 		? base_url('uploads/' . $site_settings['site_favicon'])
-		: base_url('assets/images/icons/favicon.ico');
+		: base_url('assets/images/logo.png');
 	?>
 	<link rel="icon" type="image/x-icon" href="<?= $favicon_url ?>">
 	<link rel="icon" type="image/png" sizes="16x16" href="<?= $favicon_url ?>">

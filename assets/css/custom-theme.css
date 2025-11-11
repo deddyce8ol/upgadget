@@ -135,9 +135,60 @@ a.text-primary:focus {
   color: #FFFFFF !important;
 }
 
-/* Mobile Menu Toggle */
+/* Mobile Menu Toggle Button */
+button.mobile-menu-toggler,
+.mobile-menu-toggler {
+  color: #FFFFFF !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 28px !important;
+  padding: 0.5rem 0.8rem !important;
+  margin-right: 0.5rem !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 1000 !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 45px !important;
+  min-height: 45px !important;
+  line-height: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+button.mobile-menu-toggler.text-primary,
 .mobile-menu-toggler.text-primary {
   color: #FFFFFF !important;
+}
+
+button.mobile-menu-toggler:hover,
+.mobile-menu-toggler:hover {
+  color: #0071E3 !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+button.mobile-menu-toggler:focus,
+.mobile-menu-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* FontAwesome Icon Styling */
+button.mobile-menu-toggler i,
+.mobile-menu-toggler i,
+button.mobile-menu-toggler .fa-bars,
+.mobile-menu-toggler .fa-bars,
+button.mobile-menu-toggler .fas,
+.mobile-menu-toggler .fas {
+  color: inherit !important;
+  font-size: 28px !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-weight: 900 !important;
 }
 
 /* Header Links Hover */
@@ -1393,4 +1444,59 @@ body {
 
 .breadcrumb-item.active {
   color: #8B8E93;
+}
+
+/* ========================================
+   MOBILE MENU RESPONSIVE STYLES
+   ======================================== */
+
+/* Mobile Menu Toggle Button - Visible on Mobile Only */
+@media (max-width: 991px) {
+  button.mobile-menu-toggler,
+  .mobile-menu-toggler {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Ensure header left has proper flex alignment */
+  .header-left {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Ensure button is visible and clickable */
+  .header-middle .header-left button.mobile-menu-toggler,
+  .header-middle .header-left .mobile-menu-toggler {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* Hide on Desktop */
+@media (min-width: 992px) {
+  button.mobile-menu-toggler,
+  .mobile-menu-toggler {
+    display: none !important;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 575px) {
+  button.mobile-menu-toggler,
+  .mobile-menu-toggler {
+    font-size: 24px !important;
+    padding: 0.4rem 0.6rem !important;
+    margin-right: 0.3rem !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+
+  .mobile-menu-toggler i,
+  .mobile-menu-toggler .fa-bars {
+    font-size: 24px !important;
+  }
 }

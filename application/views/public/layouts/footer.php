@@ -128,17 +128,46 @@
 						<li><a href="<?= base_url('product/category/' . $cat->slug) ?>"><?= $cat->name ?></a></li>
 						<?php endforeach; ?>
 					<?php endif; ?>
+				</ul><!-- End .mobile-menu -->
+
+				<ul class="mobile-menu">
 					<?php if ($customer_logged_in): ?>
 						<li><a href="<?= base_url('customer/account') ?>">Akun Saya</a></li>
 						<li><a href="<?= base_url('customer/orders') ?>">Pesanan Saya</a></li>
 						<li><a href="<?= base_url('customer/wishlist') ?>">Wishlist</a></li>
-						<li><a href="<?= base_url('customer/logout') ?>">Logout</a></li>
+						<li><a href="<?= base_url('cart') ?>">Keranjang</a></li>
+						<li><a href="<?= base_url('customer/logout') ?>" class="login-link">Logout</a></li>
 					<?php else: ?>
-						<li><a href="<?= base_url('customer/login') ?>">Login</a></li>
-						<li><a href="<?= base_url('customer/register') ?>">Register</a></li>
+						<li><a href="<?= base_url('customer/wishlist') ?>">Wishlist</a></li>
+						<li><a href="<?= base_url('cart') ?>">Keranjang</a></li>
+						<li><a href="<?= base_url('customer/login') ?>" class="login-link">Login</a></li>
 					<?php endif; ?>
 				</ul><!-- End .mobile-menu -->
 			</nav><!-- End .mobile-nav -->
+
+			<form class="search-wrapper mb-2" action="<?= base_url('product/search') ?>" method="get">
+				<input type="search" class="form-control mb-0" name="q" placeholder="Cari produk..." required />
+				<button class="btn icon-search text-white bg-transparent p-0" type="submit"></button>
+			</form>
+
+			<div class="social-icons">
+				<?php if (!empty($site_settings['facebook_url'])): ?>
+					<a href="<?= $site_settings['facebook_url'] ?>" class="social-icon social-facebook icon-facebook" target="_blank" title="Facebook"></a>
+				<?php endif; ?>
+				<?php if (!empty($site_settings['instagram_url'])): ?>
+					<a href="<?= $site_settings['instagram_url'] ?>" class="social-icon social-instagram icon-instagram" target="_blank" title="Instagram"></a>
+				<?php endif; ?>
+				<?php if (!empty($site_settings['tiktok_url'])): ?>
+					<a href="<?= $site_settings['tiktok_url'] ?>" class="social-icon social-tiktok" target="_blank" title="TikTok">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 14px; height: 14px; fill: currentColor;"><path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg>
+					</a>
+				<?php endif; ?>
+				<?php if (!empty($site_settings['shopee_url'])): ?>
+					<a href="<?= $site_settings['shopee_url'] ?>" class="social-icon social-shopee" target="_blank" title="Shopee" style="color: #ee4d2d;">
+						<i class="fas fa-shopping-bag"></i>
+					</a>
+				<?php endif; ?>
+			</div>
 		</div><!-- End .mobile-menu-wrapper -->
 	</div><!-- End .mobile-menu-container -->
 
