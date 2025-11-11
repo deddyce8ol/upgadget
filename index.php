@@ -66,7 +66,12 @@ define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'developm
  */
 switch (ENVIRONMENT) {
 	case 'development':
-		error_reporting(-1);
+		// For PHP 8.2+, hide deprecation warnings to prevent "headers already sent" errors
+		if (version_compare(PHP_VERSION, '8.0', '>=')) {
+			error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+		} else {
+			error_reporting(-1);
+		}
 		ini_set('display_errors', 1);
 		break;
 

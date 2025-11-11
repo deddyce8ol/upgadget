@@ -5,9 +5,14 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="card-title">Product Management</h4>
-                        <a href="<?= base_url('admin/product/create'); ?>" class="btn btn-primary">
-                            <i class="bi bi-plus-circle"></i> Add Product
-                        </a>
+                        <div class="btn-group" role="group">
+                            <a href="<?= base_url('admin/product_import'); ?>" class="btn btn-success">
+                                <i class="bi bi-file-earmark-arrow-up"></i> Import Products
+                            </a>
+                            <a href="<?= base_url('admin/product/create'); ?>" class="btn btn-primary">
+                                <i class="bi bi-plus-circle"></i> Add Product
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body">

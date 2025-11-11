@@ -105,6 +105,13 @@ $route['admin/product/delete/(:num)'] = 'admin/product/delete/$1';
 $route['admin/product/toggle_status/(:num)'] = 'admin/product/toggle_status/$1';
 $route['admin/product/delete_image/(:num)'] = 'admin/product/delete_image/$1';
 
+// Product Import
+$route['admin/product_import'] = 'admin/product_import/index';
+$route['admin/product_import/upload'] = 'admin/product_import/upload';
+$route['admin/product_import/get_preview_data'] = 'admin/product_import/get_preview_data';
+$route['admin/product_import/confirm_import'] = 'admin/product_import/confirm_import';
+$route['admin/product_import/download_template'] = 'admin/product_import/download_template';
+
 // Order Management
 $route['admin/order'] = 'admin/order/index';
 $route['admin/order/detail/(:num)'] = 'admin/order/detail/$1';
