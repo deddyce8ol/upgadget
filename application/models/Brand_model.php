@@ -25,7 +25,8 @@ class Brand_model extends CI_Model
                 $this->db->where('is_active', $filters);
             }
         }
-        $this->db->order_by('brand_name', 'ASC');
+        $this->db->order_by('sort_order', 'ASC');
+        $this->db->order_by('brand_id', 'ASC');
         return $this->db->get($this->table)->result();
     }
 
@@ -74,5 +75,28 @@ class Brand_model extends CI_Model
             $this->db->where($this->primary_key . ' !=', $exclude_id);
         }
         return $this->db->count_all_results($this->table) > 0;
+    }
+
+    public function update_sort_order($brand_id, $order)
+    {
+        $this->db->where($this->primary_key, $brand_id);
+        return $this->db->update($this->table, ['sort_order' => $order]);
+    }
+
+    public function update_bulk_order($order_data)
+    {
+        $this->db->trans_start();
+        foreach ($order_data as $brand_id => $order) {
+            $this->update_sort_order($brand_id, $order);
+        }
+        $this->db->trans_complete();
+        return $this->db->trans_status();
+    }
+
+    public function get_max_sort_order()
+    {
+        $this->db->select_max('sort_order');
+        $result = $this->db->get($this->table)->row();
+        return $result ? (int)$result->sort_order : 0;
     }
 }

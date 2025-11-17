@@ -17,6 +17,7 @@
                         <table class="table table-hover" id="brandTable">
                             <thead>
                                 <tr>
+                                    <th style="width: 40px;"><i class="bi bi-grip-vertical"></i></th>
                                     <th>ID</th>
                                     <th>Logo</th>
                                     <th>Brand Name</th>
@@ -24,7 +25,7 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="sortable-tbody">
                             </tbody>
                         </table>
                     </div>
@@ -33,6 +34,34 @@
         </div>
     </section>
 </div>
+
+<!-- Load SortableJS -->
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+
+<!-- Custom styles for drag and drop -->
+<style>
+    .sortable-ghost {
+        opacity: 0.4;
+        background-color: #f8f9fa;
+    }
+
+    .drag-handle {
+        cursor: move;
+        user-select: none;
+    }
+
+    .drag-handle:hover i {
+        color: #435ebe !important;
+    }
+
+    #sortable-tbody tr {
+        transition: background-color 0.2s;
+    }
+
+    #sortable-tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+</style>
 
 <!-- Brand Modal -->
 <div class="modal fade" id="brandModal" tabindex="-1" aria-labelledby="brandModalLabel" aria-hidden="true">
@@ -54,12 +83,20 @@
                     <div class="mb-3">
                         <label for="brand_logo" class="form-label">Brand Logo</label>
                         <input type="file" class="form-control" id="brand_logo" name="brand_logo" accept="image/*">
-                        <small class="text-muted">Max size: 2MB. Supported formats: JPG, JPEG, PNG, GIF</small>
+                        <small class="text-muted d-block">
+                            <i class="bi bi-info-circle"></i> Recommended size: <strong>350 × 122 px</strong>
+                        </small>
+                        <small class="text-muted">Max file size: 2MB. Formats: JPG, JPEG, PNG, GIF. Image will be auto-resized.</small>
                     </div>
 
                     <div id="currentLogo" class="mb-3" style="display: none;">
                         <label class="form-label">Current Logo</label><br>
-                        <img id="currentLogoImg" src="" style="max-width: 100px; max-height: 100px;">
+                        <img id="currentLogoImg" src="" style="max-width: 350px; max-height: 122px; border: 1px solid #ddd; padding: 5px;">
+                    </div>
+
+                    <div id="previewLogo" class="mb-3" style="display: none;">
+                        <label class="form-label">Preview</label><br>
+                        <img id="previewLogoImg" src="" style="max-width: 350px; max-height: 122px; border: 1px solid #ddd; padding: 5px;">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -82,6 +119,14 @@
                 "type": "GET"
             },
             "columns": [{
+                    "data": null,
+                    "orderable": false,
+                    "className": "drag-handle",
+                    "render": function() {
+                        return '<i class="bi bi-grip-vertical" style="cursor: move; font-size: 1.2em; color: #999;"></i>';
+                    }
+                },
+                {
                     "data": 0
                 },
                 {
@@ -98,9 +143,65 @@
                     "orderable": false
                 }
             ],
-            "order": [
-                [0, 'desc']
-            ]
+            "ordering": false, // Disable DataTable sorting to maintain sort_order from backend
+            "rowCallback": function(row, data) {
+                $(row).attr('data-id', data[0]);
+            }
+        });
+
+        // Initialize SortableJS for drag and drop
+        var sortable = null;
+        table.on('draw.dt', function() {
+            var tbody = document.getElementById('sortable-tbody');
+            if (sortable) {
+                sortable.destroy();
+            }
+
+            sortable = new Sortable(tbody, {
+                handle: '.drag-handle',
+                animation: 150,
+                ghostClass: 'sortable-ghost',
+                onEnd: function(evt) {
+                    // Get new order
+                    var order = [];
+                    $('#sortable-tbody tr').each(function() {
+                        var brandId = $(this).attr('data-id');
+                        if (brandId) {
+                            order.push(brandId);
+                        }
+                    });
+
+                    // Send to server
+                    $.ajax({
+                        url: '<?= base_url('admin/brand/update_order'); ?>',
+                        type: 'POST',
+                        data: {
+                            order: order
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.success) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Success!',
+                                    text: response.message,
+                                    toast: true,
+                                    position: 'top-end',
+                                    showConfirmButton: false,
+                                    timer: 3000
+                                });
+                            } else {
+                                Swal.fire('Error!', response.message, 'error');
+                                table.ajax.reload();
+                            }
+                        },
+                        error: function() {
+                            Swal.fire('Error!', 'Failed to update order', 'error');
+                            table.ajax.reload();
+                        }
+                    });
+                }
+            });
         });
 
         // Add Brand Button
@@ -109,6 +210,40 @@
             $('#brandForm')[0].reset();
             $('#brand_id').val('');
             $('#currentLogo').hide();
+            $('#previewLogo').hide();
+        });
+
+        // Image preview on file select
+        $('#brand_logo').on('change', function(e) {
+            var file = e.target.files[0];
+            if (file) {
+                // Check file size (2MB = 2097152 bytes)
+                if (file.size > 2097152) {
+                    Swal.fire('Error!', 'File size exceeds 2MB. Please select a smaller file.', 'error');
+                    $(this).val('');
+                    $('#previewLogo').hide();
+                    return;
+                }
+
+                // Check file type
+                var validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+                if (!validTypes.includes(file.type)) {
+                    Swal.fire('Error!', 'Invalid file type. Please select JPG, JPEG, PNG, or GIF.', 'error');
+                    $(this).val('');
+                    $('#previewLogo').hide();
+                    return;
+                }
+
+                // Show preview
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#previewLogoImg').attr('src', e.target.result);
+                    $('#previewLogo').show();
+                };
+                reader.readAsDataURL(file);
+            } else {
+                $('#previewLogo').hide();
+            }
         });
 
         // Edit Brand

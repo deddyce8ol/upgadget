@@ -10,12 +10,16 @@ class Home extends Public_Controller
         parent::__construct();
         $this->load->model('Banner_model');
         $this->load->model('Product_model');
+        $this->load->model('Brand_model');
     }
 
     public function index()
     {
         // Get active banners
         $data['banners'] = $this->Banner_model->get_all(1);
+
+        // Get active brands for brand slider
+        $data['brands'] = $this->Brand_model->get_all(['is_active' => 1]);
 
         // Get featured products
         $data['featured_products'] = $this->Product_model->get_all([

@@ -205,6 +205,15 @@
 	<!-- Cart Functions JS -->
 	<script src="<?= base_url('assets/js/cart-functions.js') ?>"></script>
 
+	<!-- Page Specific Scripts -->
+	<?php if (isset($content_view) && $content_view == 'public/home/index'): ?>
+	<script>
+	// Set base URL for home.js
+	var base_url = '<?= base_url() ?>';
+	</script>
+	<script src="<?= base_url('assets/js/home.js') ?>"></script>
+	<?php endif; ?>
+
 	<?php if ($this->session->flashdata('success')): ?>
 	<script>
 		$(document).ready(function() {

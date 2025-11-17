@@ -66,26 +66,24 @@ class Brand extends CI_Controller
             return;
         }
 
+        // Get the next sort_order value
+        $max_sort_order = $this->Brand_model->get_max_sort_order();
+
         $data = [
             'brand_name' => $this->input->post('brand_name'),
             'brand_slug' => url_title($this->input->post('brand_name'), 'dash', TRUE),
-            'is_active' => 1
+            'is_active' => 1,
+            'sort_order' => $max_sort_order + 1
         ];
 
         // Handle file upload
         if (!empty($_FILES['brand_logo']['name'])) {
-            $config['upload_path'] = './uploads/brands/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $config['max_size'] = 2048; // 2MB
-            $config['file_name'] = 'brand_' . time() . '_' . uniqid();
+            $upload_result = $this->_upload_and_resize_logo('brand_logo');
 
-            $this->load->library('upload', $config);
-
-            if ($this->upload->do_upload('brand_logo')) {
-                $upload_data = $this->upload->data();
-                $data['brand_logo'] = $upload_data['file_name'];
+            if ($upload_result['success']) {
+                $data['brand_logo'] = $upload_result['file_name'];
             } else {
-                echo json_encode(['success' => false, 'message' => $this->upload->display_errors()]);
+                echo json_encode(['success' => false, 'message' => $upload_result['message']]);
                 return;
             }
         }
@@ -138,18 +136,12 @@ class Brand extends CI_Controller
                 }
             }
 
-            $config['upload_path'] = './uploads/brands/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $config['max_size'] = 2048; // 2MB
-            $config['file_name'] = 'brand_' . time() . '_' . uniqid();
+            $upload_result = $this->_upload_and_resize_logo('brand_logo');
 
-            $this->load->library('upload', $config);
-
-            if ($this->upload->do_upload('brand_logo')) {
-                $upload_data = $this->upload->data();
-                $data['brand_logo'] = $upload_data['file_name'];
+            if ($upload_result['success']) {
+                $data['brand_logo'] = $upload_result['file_name'];
             } else {
-                echo json_encode(['success' => false, 'message' => $this->upload->display_errors()]);
+                echo json_encode(['success' => false, 'message' => $upload_result['message']]);
                 return;
             }
         }
@@ -229,5 +221,100 @@ class Brand extends CI_Controller
         } else {
             echo json_encode(['success' => false, 'message' => 'Failed to update status']);
         }
+    }
+
+    public function update_order()
+    {
+        $order_data = $this->input->post('order');
+
+        if (!$order_data || !is_array($order_data)) {
+            echo json_encode(['success' => false, 'message' => 'Invalid order data']);
+            return;
+        }
+
+        // Convert array to associative array with brand_id => sort_order
+        $order_map = [];
+        foreach ($order_data as $index => $brand_id) {
+            $order_map[$brand_id] = $index + 1;
+        }
+
+        $update = $this->Brand_model->update_bulk_order($order_map);
+
+        if ($update) {
+            // Log action
+            $userLogAction = [
+                'user_id' => $this->session->userdata('id_user'),
+                'action' => 'Updated brand display order'
+            ];
+            $this->logaction->insertLog($userLogAction);
+
+            echo json_encode(['success' => true, 'message' => 'Brand order updated successfully!']);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Failed to update order']);
+        }
+    }
+
+    /**
+     * Upload and resize brand logo to recommended size (350 x 122 px)
+     *
+     * @param string $field_name The name of the file input field
+     * @return array Array with 'success', 'file_name', and 'message' keys
+     */
+    private function _upload_and_resize_logo($field_name)
+    {
+        // Upload configuration
+        $config['upload_path'] = './uploads/brands/';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['max_size'] = 2048; // 2MB
+        $config['file_name'] = 'brand_' . time() . '_' . uniqid();
+
+        // Ensure upload directory exists
+        if (!is_dir($config['upload_path'])) {
+            mkdir($config['upload_path'], 0755, true);
+        }
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload($field_name)) {
+            return [
+                'success' => false,
+                'message' => strip_tags($this->upload->display_errors())
+            ];
+        }
+
+        $upload_data = $this->upload->data();
+        $file_name = $upload_data['file_name'];
+        $file_path = $upload_data['full_path'];
+
+        // Resize configuration - recommended size 350 x 122 px
+        $resize_config['image_library'] = 'gd2';
+        $resize_config['source_image'] = $file_path;
+        $resize_config['maintain_ratio'] = true;
+        $resize_config['width'] = 350;
+        $resize_config['height'] = 122;
+        $resize_config['master_dim'] = 'auto'; // Auto determine which dimension to use as master
+
+        $this->load->library('image_lib', $resize_config);
+
+        if (!$this->image_lib->resize()) {
+            // If resize fails, delete the uploaded file and return error
+            if (file_exists($file_path)) {
+                unlink($file_path);
+            }
+
+            return [
+                'success' => false,
+                'message' => 'Failed to resize image: ' . $this->image_lib->display_errors()
+            ];
+        }
+
+        // Clear image_lib for future use
+        $this->image_lib->clear();
+
+        return [
+            'success' => true,
+            'file_name' => $file_name,
+            'message' => 'Logo uploaded and resized successfully'
+        ];
     }
 }
