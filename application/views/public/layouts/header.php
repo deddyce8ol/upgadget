@@ -97,7 +97,7 @@
 			<div class="header-top">
 				<div class="container">
 					<div class="header-left d-none d-sm-block">
-						<p class="top-message text-uppercase"><?= $site_settings['site_tagline'] ?? 'Toko Elektronik Terpercaya' ?></p>
+						<p class="top-message text-uppercase"><?= $site_settings['site_tagline'] ?? 'Upgadget Agen Iphone Pontianak' ?></p>
 					</div><!-- End .header-left -->
 
 					<div class="header-right header-dropdowns ml-0 ml-sm-auto w-sm-100">
@@ -117,17 +117,6 @@
 										<li><a href="<?= base_url('cart') ?>">Keranjang</a></li>
 										<li><a href="<?= base_url('customer/login') ?>">Login</a></li>
 									<?php endif; ?>
-								</ul>
-							</div><!-- End .header-menu -->
-						</div><!-- End .header-dropown -->
-
-						<span class="separator"></span>
-
-						<div class="header-dropdown mr-auto mr-sm-3 mr-md-0">
-							<a href="#"><?= $site_settings['currency_code'] ?? 'IDR' ?></a>
-							<div class="header-menu">
-								<ul>
-									<li><a href="#"><?= $site_settings['currency_code'] ?? 'IDR' ?></a></li>
 								</ul>
 							</div><!-- End .header-menu -->
 						</div><!-- End .header-dropown -->
@@ -171,6 +160,7 @@
 							$logo_text_parts = explode(' ', $site_name, 2);
 							?>
 							<img src="<?= $logo_url ?>" width="auto" height="45" alt="<?= $site_name ?>" style="max-height: 45px; width: auto;">
+							<!--
 							<div class="logo-text">
 								<?php if (count($logo_text_parts) == 2): ?>
 									<div><?= strtoupper($logo_text_parts[0]) ?></div>
@@ -179,6 +169,7 @@
 									<div><?= strtoupper($site_name) ?></div>
 								<?php endif; ?>
 							</div>
+							-->
 						</a>
 					</div><!-- End .header-left -->
 
