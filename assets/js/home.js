@@ -28,6 +28,67 @@ $(document).ready(function() {
 			}
 		});
 	}
+
+	// Initialize Budget Slider with 5 items per slide
+	if ($('.budget-slider').length) {
+		$('.budget-slider').owlCarousel({
+			margin: 15,
+			loop: true,
+			autoWidth: false,
+			items: 5,
+			dots: true,
+			nav: true,
+			center: false,
+			pullDrag: true,
+			freeDrag: false,
+			slideBy: 1,
+			responsiveRefreshRate: 100,
+			responsive: {
+				0: {
+					items: 1,
+					dots: true,
+					nav: false,
+					margin: 10,
+					slideBy: 1
+				},
+				480: {
+					items: 2,
+					dots: true,
+					nav: false,
+					margin: 10,
+					slideBy: 1
+				},
+				768: {
+					items: 3,
+					dots: true,
+					nav: false,
+					margin: 12,
+					slideBy: 1
+				},
+				992: {
+					items: 4,
+					dots: true,
+					nav: false,
+					margin: 15,
+					slideBy: 1
+				},
+				1200: {
+					items: 5,
+					dots: true,
+					nav: true,
+					margin: 15,
+					slideBy: 1
+				},
+				1400: {
+					items: 5,
+					dots: true,
+					nav: true,
+					margin: 15,
+					slideBy: 1
+				}
+			}
+		});
+	}
 });
 
 /**

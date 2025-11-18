@@ -50,7 +50,7 @@
 <?php if (!empty($brands)): ?>
 <section class="brand-slider-section">
 	<div class="container">
-		<h2 class="section-title text-center">Brand Produk</h2>
+		<h2 class="section-title text-center">Temukan Produk Berdasarkan Brand</h2>
 
 		<div class="brand-slider owl-carousel owl-theme">
 			<?php foreach ($brands as $brand): ?>
@@ -70,6 +70,98 @@
 	</div>
 </section>
 <?php endif; ?>
+
+<!-- Budget Finder Section -->
+<section class="budget-finder-section bg-lighter pt-5 pb-5">
+	<div class="container">
+		<h2 class="section-title text-center mb-4">Temukan Produk Terbaik Berdasarkan Budget Mu</h2>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="budget-slider owl-carousel owl-theme">
+					<!-- 1 Jutaan -->
+					<div class="budget-card">
+						<a href="<?= base_url('product?price_min=1000000&price_max=1999999') ?>" title="Produk 1 Jutaan">
+							<div class="budget-label">1 Jutaan</div>
+							<div class="budget-range">Rp 1 - 2 Juta</div>
+						</a>
+					</div>
+
+					<!-- 2 Jutaan -->
+					<div class="budget-card">
+						<a href="<?= base_url('product?price_min=2000000&price_max=2999999') ?>" title="Produk 2 Jutaan">
+							<div class="budget-label">2 Jutaan</div>
+							<div class="budget-range">Rp 2 - 3 Juta</div>
+						</a>
+					</div>
+
+					<!-- 3 Jutaan -->
+					<div class="budget-card">
+						<a href="<?= base_url('product?price_min=3000000&price_max=3999999') ?>" title="Produk 3 Jutaan">
+							<div class="budget-label">3 Jutaan</div>
+							<div class="budget-range">Rp 3 - 4 Juta</div>
+						</a>
+					</div>
+
+					<!-- 4 Jutaan -->
+					<div class="budget-card">
+						<a href="<?= base_url('product?price_min=4000000&price_max=4999999') ?>" title="Produk 4 Jutaan">
+							<div class="budget-label">4 Jutaan</div>
+							<div class="budget-range">Rp 4 - 5 Juta</div>
+						</a>
+					</div>
+
+					<!-- 5 Jutaan -->
+					<div class="budget-card">
+						<a href="<?= base_url('product?price_min=5000000&price_max=5999999') ?>" title="Produk 5 Jutaan">
+							<div class="budget-label">5 Jutaan</div>
+							<div class="budget-range">Rp 5 - 6 Juta</div>
+						</a>
+					</div>
+
+					<!-- 6 Jutaan -->
+					<div class="budget-card">
+						<a href="<?= base_url('product?price_min=6000000&price_max=6999999') ?>" title="Produk 6 Jutaan">
+							<div class="budget-label">6 Jutaan</div>
+							<div class="budget-range">Rp 6 - 7 Juta</div>
+						</a>
+					</div>
+
+					<!-- 7 Jutaan -->
+					<div class="budget-card">
+						<a href="<?= base_url('product?price_min=7000000&price_max=7999999') ?>" title="Produk 7 Jutaan">
+							<div class="budget-label">7 Jutaan</div>
+							<div class="budget-range">Rp 7 - 8 Juta</div>
+						</a>
+					</div>
+
+					<!-- 8 Jutaan -->
+					<div class="budget-card">
+						<a href="<?= base_url('product?price_min=8000000&price_max=8999999') ?>" title="Produk 8 Jutaan">
+							<div class="budget-label">8 Jutaan</div>
+							<div class="budget-range">Rp 8 - 9 Juta</div>
+						</a>
+					</div>
+
+					<!-- 9 Jutaan -->
+					<div class="budget-card">
+						<a href="<?= base_url('product?price_min=9000000&price_max=9999999') ?>" title="Produk 9 Jutaan">
+							<div class="budget-label">9 Jutaan</div>
+							<div class="budget-range">Rp 9 - 10 Juta</div>
+						</a>
+					</div>
+
+					<!-- Flagship (≥10 Juta) -->
+					<div class="budget-card budget-card-flagship">
+						<a href="<?= base_url('product?price_min=10000000') ?>" title="Produk Flagship">
+							<div class="budget-label">Flagship</div>
+							<div class="budget-range">≥ Rp 10 Juta</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 <!-- Featured Products - Demo4 Style -->
 <?php if (!empty($featured_products)): ?>

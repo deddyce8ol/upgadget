@@ -1658,3 +1658,224 @@ body {
     font-size: 24px !important;
   }
 }
+
+/* ========================================
+   BUDGET FINDER SECTION
+   ======================================== */
+
+/* Budget Finder Section */
+.budget-finder-section {
+  padding: 3rem 0;
+  background-color: #F5F5F7;
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.budget-finder-section .section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* Budget Card Container */
+.budget-card {
+  background-color: #FFFFFF;
+  border: 2px solid #C8CACF;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  min-height: 100px;
+  max-width: 250px;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.budget-card a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #000;
+}
+
+/* Budget Label (Main Text) */
+.budget-card .budget-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.3px;
+}
+
+/* Budget Range (Subtitle) */
+.budget-card .budget-range {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Hover Effect */
+.budget-card:hover {
+  border-color: #dadce0;
+  background-color: #dadce0;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(218, 220, 224, 0.25);
+}
+
+.budget-card:hover .budget-label {
+  color: #000;
+}
+
+.budget-card:hover .budget-range {
+  color: #333;
+}
+
+/* Active/Click Effect */
+.budget-card:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(218, 220, 224, 0.2);
+}
+
+/* Flagship Card Special Styling (Optional) */
+.budget-card-flagship {
+  border-color: #D4AF37;
+}
+
+.budget-card-flagship:hover {
+  border-color: #D4AF37;
+  background: linear-gradient(135deg, #dadce0 0%, #D4AF37 100%);
+}
+
+.budget-card-flagship .budget-label {
+  color: #000;
+}
+
+/* Budget Slider Owl Carousel */
+.budget-slider.owl-carousel .owl-stage {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Budget Slider Dots */
+.budget-slider.owl-carousel .owl-dots {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.budget-slider.owl-carousel .owl-dots .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.budget-slider.owl-carousel .owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  background-color: #C8CACF;
+  display: block;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.budget-slider.owl-carousel .owl-dots .owl-dot:hover span {
+  background-color: #dadce0;
+  transform: scale(1.2);
+}
+
+.budget-slider.owl-carousel .owl-dots .owl-dot.active span {
+  background-color: #dadce0;
+  width: 12px;
+  height: 12px;
+}
+
+/* Responsive Budget Cards */
+@media (max-width: 991px) {
+  .budget-finder-section {
+    padding: 2.5rem 0;
+  }
+
+  .budget-finder-section .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .budget-card {
+    padding: 1.25rem 0.75rem;
+    min-height: 90px;
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .budget-card .budget-label {
+    font-size: 1rem;
+  }
+
+  .budget-card .budget-range {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .budget-finder-section {
+    padding: 2rem 0;
+  }
+
+  .budget-finder-section .section-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .budget-card {
+    padding: 1rem 0.5rem;
+    min-height: 80px;
+    border-radius: 10px;
+    max-width: 160px;
+    width: 100%;
+  }
+
+  .budget-card .budget-label {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .budget-card .budget-range {
+    font-size: 0.75rem;
+  }
+
+  .budget-slider.owl-carousel .owl-dots {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .budget-finder-section .section-title {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .budget-card {
+    padding: 0.875rem 0.5rem;
+    min-height: 75px;
+    border-radius: 8px;
+    max-width: 140px;
+    width: 100%;
+  }
+
+  .budget-card .budget-label {
+    font-size: 0.875rem;
+  }
+
+  .budget-card .budget-range {
+    font-size: 0.7rem;
+  }
+}
